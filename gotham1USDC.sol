@@ -6,7 +6,7 @@
 Gotham.cash USDC mixer - 1 USDC pool
 
 https://gotham.cash
-https://github.com/gothamcash
+https://github.com/gotham-cash
 https://x.com/gothamcash
 https://t.me/gotham_cash
 https://gothamcash.gitbook.io/
