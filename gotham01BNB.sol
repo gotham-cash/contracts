@@ -2,7 +2,7 @@
 Gotham.cash BNB mixer - 0.1 BNB pool
 
 https://gotham.cash
-https://github.com/gothamcash
+https://github.com/gotham-cash
 https://x.com/gothamcash
 https://t.me/gotham_cash
 
