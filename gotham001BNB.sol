@@ -1,21 +1,27 @@
 /**
+ *Submitted for verification at BscScan.com on 2025-07-19
+*/
+
+/**
 Gotham.cash BNB mixer - 0.01 BNB pool
 
 https://gotham.cash
-https://github.com/gotham-cash
+https://github.com/gothamcash
 https://x.com/gothamcash
 https://t.me/gotham_cash
+https://gothamcash.gitbook.io/
 
+GothamCash is a non-custodial mixer operating on BSC, that breaks on-chain links between sender and recipient.
 Our mixer was built using simple and secured solidity functions.
 Encryption is generated off-chain in a collision-resistant manner, using SHA256 and Keccak256.
 
-To maximize the security, variables are hardcoded (cannot be changed), deposits/withdrawals cannot be paused or cancelled,
-the contract cannot self-destruct, and cannot be called via a delegatecall.
+To maximize the security, variables are hardcoded (cannot be changed), deposits/withdrawals cannot be paused or cancelled.
+The contract cannot self-destruct, and cannot be called via delegatecall.
 The contract is not deployed behind a proxy, so not immutable and not upgradeable.
 The funds cannot be withdrawn without a valid note: if it's lost, the funds are lost forever.
 THe contract has been secured against frontrunning, no third-party can steal your funds during withdrawal.
 
-The protocol takes a 1% mixing fee.
+The protocol takes a 1% mixing fee between the deposit and the withdrawal.
 **/
 
 // SPDX-License-Identifier: MIT
@@ -122,12 +128,6 @@ contract GothamCash001BNB {
 
         bytes32 hashedNullifierHash = keccak256(abi.encodePacked(commitment));
         emit Withdrawal(signer, hashedNullifierHash);
-    }
-
-    /// @dev function retrieving the stuck BNB during development (in case of bugs)
-    function devWithdraw() external {
-        require(msg.sender == DEV_ADDRESS, "Not authorized");
-        payable(msg.sender).transfer(address(this).balance);
     }
 
 }
